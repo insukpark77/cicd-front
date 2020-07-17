@@ -52,7 +52,7 @@ podTemplate(label: label, containers: [
 		
 		stage('Static Code Analysis') {
 			container('scanner') { 
-				sh "sonar-scanner \-Dsonar.projectName=${sonarQubeProject} \-Dsonar.host.url=${sonarQubeURL} \-Dsonar.projectBaseDir=./"
+				sh "sonar-scanner -Dsonar.projectName=${sonarQubeProject} -Dsonar.host.url=${sonarQubeURL} -Dsonar.projectBaseDir=./"
 			}
 		}
 
