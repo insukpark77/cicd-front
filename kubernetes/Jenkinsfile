@@ -2,11 +2,11 @@ def label = "worker-${UUID.randomUUID().toString()}"
 
 // Slack 알림
 def notifySlack(STATUS, COLOR) {
-	slackSend channel: '#{jenkins-hands-on}', 
+	slackSend channel: 'jenkins-hands-on', 
 		message: STATUS+" : " + "${env.JOB_NAME}[${env.BUILD_NUMBER}] (${env.BUILD_URL})", 
 		color: COLOR, 
-		tokenCredentialId: '{slack-lab77}', 
-		teamDomain: '{teck}'
+		tokenCredentialId: 'slack-lab77', 
+		teamDomain: 'teck'
 }
 
 podTemplate(label: label, containers: [
